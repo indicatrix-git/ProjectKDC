@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71BA1A7C-534A-44C2-A839-3250E7295F38}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ditec.RIS.RFO.Svc</RootNamespace>
+    <AssemblyName>Ditec.RIS.RFO.Svc</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ditec.Iam.Dol">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.Iam.Dol.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.Log.Bll.Inf">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.Log.Bll.Inf.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.Log.Dol">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.Log.Dol.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.Log.SysFra.Iam.Impl">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.Log.SysFra.Iam.Impl.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.RIS.SysFra.Svc.Utils">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.RIS.SysFra.Svc.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.DataTypes.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.DataTypes.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.Infrastructure.Impl">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.Infrastructure.Impl.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.Core">
+      <HintPath>..\..\SysFra\Stable\3rd\LinFu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClaimsWithErrorRfo.cs" />
+    <Compile Include="RfoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CC.Bll.Inf\CC.Bll.Inf.csproj">
+      <Project>{c2e9f12d-d774-42ca-9e8d-2fa12296e08c}</Project>
+      <Name>CC.Bll.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CC.Dol\CC.Dol.csproj">
+      <Project>{f1819d01-6416-43a2-87ee-cc08bfded521}</Project>
+      <Name>CC.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFO.Bll.Inf\RFO.Bll.Inf.csproj">
+      <Project>{9c7bc179-214e-45f8-bd53-4a9b40fb145b}</Project>
+      <Name>RFO.Bll.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFO.Dol\RFO.Dol.csproj">
+      <Project>{0591c699-d186-4950-ad9e-6ec048e890a2}</Project>
+      <Name>RFO.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFO.Svc.Inf\RFO.Svc.Inf.csproj">
+      <Project>{fff849c4-a404-4588-a23d-b6939ca2f193}</Project>
+      <Name>RFO.Svc.Inf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
