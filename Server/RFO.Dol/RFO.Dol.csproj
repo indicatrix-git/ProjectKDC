@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0591C699-D186-4950-AD9E-6EC048E890A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ditec.RIS.RFO.Dol</RootNamespace>
+    <AssemblyName>Ditec.RIS.RFO.Dol</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ditec.Iam.Dol, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.Iam.Dol.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.DataTypes.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.DataTypes.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractClassHelper.cs" />
+    <Compile Include="BaseDataMember.cs" />
+    <Compile Include="BaseDataMemberFilterCriteria.cs" />
+    <Compile Include="ClaimsRFO.cs" />
+    <Compile Include="FyzickaOsoba.cs" />
+    <Compile Include="FyzickaOsobaFilterCriteria.cs" />
+    <Compile Include="FyzickaOsobaStatnaPrislusnost.cs" />
+    <Compile Include="FyzickaOsobaStatnaPrislusnostFilterCriteria.cs" />
+    <Compile Include="FyzickaOsobaTitul.cs" />
+    <Compile Include="FyzickaOsobaTitulFilterCriteria.cs" />
+    <Compile Include="Meno.cs" />
+    <Compile Include="MenoFilterCriteria.cs" />
+    <Compile Include="NajdenaOsoba.cs" />
+    <Compile Include="OznacenieZaujmovejOsobyWS-v1_0.cs" />
+    <Compile Include="PoskytnutieCiselnikovWS-v1_0.cs" />
+    <Compile Include="PoskytnutieUdajovIFOOnlineWS-v1_0.cs" />
+    <Compile Include="PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWS-v1_0.cs" />
+    <Compile Include="PravnaSposobilostObmedzenie.cs" />
+    <Compile Include="PravnaSposobilostObmedzenieFilterCriteria.cs" />
+    <Compile Include="PravnickaOsoba.cs" />
+    <Compile Include="PravnickaOsobaFilterCriteria.cs" />
+    <Compile Include="Priezvisko.cs" />
+    <Compile Include="PriezviskoFilterCriteria.cs" />
+    <Compile Include="PrijatieZmienWS-v1_0.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionMimoSr.cs" />
+    <Compile Include="RegionMimoSrFilterCriteria.cs" />
+    <Compile Include="Registration_v01.cs" />
+    <Compile Include="RFOOsoba.cs" />
+    <Compile Include="RodnePriezvisko.cs" />
+    <Compile Include="RodnePriezviskoFilterCriteria.cs" />
+    <Compile Include="StotoznenaFyzOsoba.cs" />
+    <Compile Include="StotoznenaFyzOsobaFilterCriteria.cs" />
+    <Compile Include="UdajePobytu.cs" />
+    <Compile Include="UdajePobytuFilterCriteria.cs" />
+    <Compile Include="VztahovaFyzOsoba.cs" />
+    <Compile Include="VztahovaFyzOsobaFilterCriteria.cs" />
+    <Compile Include="ZakazPobytu.cs" />
+    <Compile Include="ZakazPobytuFilterCriteria.cs" />
+    <Compile Include="ZapisNovychOsobWS-v1_0.cs" />
+    <Compile Include="ZapisUpravyMenaWS-v1_0.cs" />
+    <Compile Include="ZapisUpravyPriezviskaWS-v1_0.cs" />
+    <Compile Include="ZoznamIFOSoZmenenymiReferencnymiUdajmiWS-v1_0.cs" />
+    <Compile Include="ZrusenieOznaceniaZaujmovejOsobyWS-v1_0.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XSD\DocumentUnauthorized_v01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\OznacenieZaujmovejOsobyWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\PoskytnutieCiselnikovWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\PoskytnutieUdajovIFOOnlineWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\PrijatieZmienWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\Registration_v01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ZapisNovychOsobWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ZapisUpravyMenaWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ZapisUpravyPriezviskaWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ZoznamIFOSoZmenenymiReferencnymiUdajmiWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ZrusenieOznaceniaZaujmovejOsobyWS-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CC.Dol\CC.Dol.csproj">
+      <Project>{f1819d01-6416-43a2-87ee-cc08bfded521}</Project>
+      <Name>CC.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CC.Tools\CC.Tools.csproj">
+      <Project>{c6dc315f-a4c0-450a-b6df-4d2f8acb6faa}</Project>
+      <Name>CC.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
