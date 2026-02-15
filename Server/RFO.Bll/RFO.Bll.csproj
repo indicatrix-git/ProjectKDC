@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA36AF45-6B39-4F39-B9F3-A9159D798604}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ditec.RIS.RFO.Bll</RootNamespace>
+    <AssemblyName>Ditec.RIS.RFO.Bll</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ditec.RIS.SysFra.DataAccess.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.RIS.SysFra.DataAccess.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.DataTypes.Infrastructure, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.DataTypes.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.Infrastructure, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.Infrastructure.Impl">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.Infrastructure.Impl.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.NhSql.Dal">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.NhSql.Dal.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.Core">
+      <HintPath>..\..\SysFra\Stable\3rd\LinFu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\SysFra\Stable\3rd\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BRRFO.cs" />
+    <Compile Include="InformationalWS.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="TransactionalWS.cs" />
+    <Compile Include="Web References\PoskytnutieUdajovIFOOnlineWeb\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWeb\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ZapisNovychOsobWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ZapisUpravyMenaWeb\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ZapisUpravyPriezviskaWeb\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PoskytnutieUdajovIFOOnlineWeb\Podanie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PoskytnutieUdajovIFOOnlineWeb\PoskytnutieUdajovIFOOnline_v1_0.wsdl" />
+    <None Include="Web References\PoskytnutieUdajovIFOOnlineWeb\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PoskytnutieUdajovIFOOnlineWeb\Zasielka.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PoskytnutieUdajovIFOOnlineWeb\ZasielkaType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWeb\Podanie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWeb\PoskytnutieZoznamuIFOPodlaVyhladavacichKriterii_v1_0.wsdl" />
+    <None Include="Web References\PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWeb\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWeb\Zasielka.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWeb\ZasielkaType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ZapisNovychOsobWS\Podanie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ZapisNovychOsobWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ZapisNovychOsobWS\ZapisNovychOsob_v1_0.wsdl" />
+    <None Include="Web References\ZapisNovychOsobWS\Zasielka.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ZapisNovychOsobWS\ZasielkaType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ZapisUpravyMenaWeb\Podanie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ZapisUpravyMenaWeb\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ZapisUpravyMenaWeb\ZapisUpravyMena_v1_0.wsdl" />
+    <None Include="Web References\ZapisUpravyMenaWeb\Zasielka.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ZapisUpravyMenaWeb\ZasielkaType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ZapisUpravyPriezviskaWeb\Podanie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ZapisUpravyPriezviskaWeb\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ZapisUpravyPriezviskaWeb\ZapisUpravyPriezviska_v1_0.wsdl" />
+    <None Include="Web References\ZapisUpravyPriezviskaWeb\Zasielka.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ZapisUpravyPriezviskaWeb\ZasielkaType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CC.Bll.Inf\CC.Bll.Inf.csproj">
+      <Project>{c2e9f12d-d774-42ca-9e8d-2fa12296e08c}</Project>
+      <Name>CC.Bll.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CC.Dal.Inf\CC.Dal.Inf.csproj">
+      <Project>{b30801b6-b968-4c9a-9aed-cb74c369466b}</Project>
+      <Name>CC.Dal.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CC.Dol\CC.Dol.csproj">
+      <Project>{f1819d01-6416-43a2-87ee-cc08bfded521}</Project>
+      <Name>CC.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DZP.Dol\DZP.Dol.csproj">
+      <Project>{7c13f5c6-04a5-4a21-a2c3-73acb5472592}</Project>
+      <Name>DZP.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFO.Bll.Inf\RFO.Bll.Inf.csproj">
+      <Project>{9c7bc179-214e-45f8-bd53-4a9b40fb145b}</Project>
+      <Name>RFO.Bll.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFO.Dal.Inf\RFO.Dal.Inf.csproj">
+      <Project>{e4f863e9-5598-4c56-b3ac-3dc1a400c9c7}</Project>
+      <Name>RFO.Dal.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFO.Dol\RFO.Dol.csproj">
+      <Project>{0591c699-d186-4950-ad9e-6ec048e890a2}</Project>
+      <Name>RFO.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIS.Dol\SIS.Dol.csproj">
+      <Project>{43b17629-9b67-4c4d-9f6c-f2a8bc239e8b}</Project>
+      <Name>SIS.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZAM.Dol\ZAM.Dol.csproj">
+      <Project>{ce734407-5a22-4e01-8ce5-1e16eccba886}</Project>
+      <Name>ZAM.Dol</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000075%2asoa_b79b1bac-81d0-49d1-9f20-fdf489b2fb84/PoskytnutieUdajovIFOOnline_v1_0_ep%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PoskytnutieUdajovIFOOnlineWeb\</RelPath>
+      <UpdateFromURL>http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000075%2asoa_b79b1bac-81d0-49d1-9f20-fdf489b2fb84/PoskytnutieUdajovIFOOnline_v1_0_ep%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Ditec_RIS_RFO_Bll_PoskytnutieUdajovIFOOnlineWeb_PoskytnutieUdajovIFOOnline_v1_0_ep</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000075%2asoa_b79b1bac-81d0-49d1-9f20-fdf489b2fb84/PoskytnutieZoznamuIFOPodlaVyhladavacichKriterii_v1_0_ep%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWeb\</RelPath>
+      <UpdateFromURL>http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000075%2asoa_b79b1bac-81d0-49d1-9f20-fdf489b2fb84/PoskytnutieZoznamuIFOPodlaVyhladavacichKriterii_v1_0_ep%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Ditec_RIS_RFO_Bll_PoskytnutieZoznamuIFOPodlaVyhladavacichKriteriiWeb_PoskytnutieZoznamuIFOPodlaVyhladavacichKriterii_v1_0_ep</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000076%2asoa_9fadc38d-fa8c-4ed2-9dd6-6c0b421a2cbf/ZapisNovychOsob_v1_0_ep%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ZapisNovychOsobWS\</RelPath>
+      <UpdateFromURL>http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000076%2asoa_9fadc38d-fa8c-4ed2-9dd6-6c0b421a2cbf/ZapisNovychOsob_v1_0_ep%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Ditec_RIS_RFO_Bll_ZapisNovychOsobWS_ZapisNovychOsob_v1_0_ep</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000076%2asoa_9fadc38d-fa8c-4ed2-9dd6-6c0b421a2cbf/ZapisUpravyMena_v1_0_ep%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ZapisUpravyMenaWeb\</RelPath>
+      <UpdateFromURL>http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000076%2asoa_9fadc38d-fa8c-4ed2-9dd6-6c0b421a2cbf/ZapisUpravyMena_v1_0_ep%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Ditec_RIS_RFO_Bll_ZapisUpravyMenaWeb_ZapisUpravyMena_v1_0_ep</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000076%2asoa_9fadc38d-fa8c-4ed2-9dd6-6c0b421a2cbf/ZapisUpravyPriezviska_v1_0_ep%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ZapisUpravyPriezviskaWeb\</RelPath>
+      <UpdateFromURL>http://ihs/soa-infra/services/RFO/RFO.NEZEP.WS!1.0.000076%2asoa_9fadc38d-fa8c-4ed2-9dd6-6c0b421a2cbf/ZapisUpravyPriezviska_v1_0_ep%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Ditec_RIS_RFO_Bll_ZapisUpravyPriezviskaWeb_ZapisUpravyPriezviska_v1_0_ep</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
