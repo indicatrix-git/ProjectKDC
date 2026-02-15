@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8921D06F-2076-4611-B071-9177A3029CDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ditec.RIS.RFO.Inf</RootNamespace>
+    <AssemblyName>Ditec.RIS.RFO.Inf</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bbv.Common.EventBroker">
+      <HintPath>..\..\SysFra\Stable\3rd\bbv.Common.EventBroker.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.Data.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.Utils.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.XtraBars.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.XtraEditors.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.Iam.Public.Dol">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.Iam.Public.Dol.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.RIS.SysFra.WinUI.Shared">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.RIS.SysFra.WinUI.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.DataTypes.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.SysFra.DataTypes.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.WinUI.Shell.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.WinUI.Shell.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.Core">
+      <HintPath>..\..\SysFra\Stable\3rd\LinFu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RFODetailModel.cs" />
+    <Compile Include="IRFODetail.cs" />
+    <Compile Include="OpravneCinnostiModel.cs" />
+    <Compile Include="IOpravneCinnosti.cs" />
+    <Compile Include="IFOStotoznenieOsob.cs" />
+    <Compile Include="IFOBrowse.cs" />
+    <Compile Include="IFODetail.cs" />
+    <Compile Include="ModuleMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleMenu.Designer.cs">
+      <DependentUpon>ModuleMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleScenes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FOStotoznenieOsobModel.cs" />
+    <Compile Include="FOBrowseModel.cs" />
+    <Compile Include="FODetailModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ModuleMenu.resx">
+      <DependentUpon>ModuleMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Server\CC.Dol\CC.Dol.csproj">
+      <Project>{f1819d01-6416-43a2-87ee-cc08bfded521}</Project>
+      <Name>CC.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Server\RFO.Dol\RFO.Dol.csproj">
+      <Project>{0591c699-d186-4950-ad9e-6ec048e890a2}</Project>
+      <Name>RFO.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RIS.Client.Utils\RIS.Client.Utils.csproj">
+      <Project>{99386694-7757-457b-9657-40394e343b00}</Project>
+      <Name>RIS.Client.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

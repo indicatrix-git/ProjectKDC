@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24B7C4D9-3597-4E99-80E4-42129AE02E35}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ditec.RIS.RFO.View</RootNamespace>
+    <AssemblyName>Ditec.RIS.RFO.View</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.Data.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.Printing.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.Sparkline.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.Utils.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.Xpo.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.XtraBars.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.XtraEditors.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.XtraGrid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\DevExpress\DevExpress.XtraLayout.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.Iam.Public.Dol">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.Iam.Public.Dol.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.RIS.SysFra.WinUI.Shared">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.RIS.SysFra.WinUI.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.DataTypes.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.SysFra.DataTypes.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.WinUI.Shell.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.WinUI.Shell.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.Core">
+      <HintPath>..\..\SysFra\Stable\3rd\LinFu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RFODetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFODetailView.Designer.cs">
+      <DependentUpon>RFODetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpravneCinnostiView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpravneCinnostiView.Designer.cs">
+      <DependentUpon>OpravneCinnostiView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FOStotoznenieOsobView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FOStotoznenieOsobView.Designer.cs">
+      <DependentUpon>FOStotoznenieOsobView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FODetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FODetailView.Designer.cs">
+      <DependentUpon>FODetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FOBrowseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FOBrowseView.Designer.cs">
+      <DependentUpon>FOBrowseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RFODetailView.resx">
+      <DependentUpon>RFODetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpravneCinnostiView.resx">
+      <DependentUpon>OpravneCinnostiView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FOStotoznenieOsobView.resx">
+      <DependentUpon>FOStotoznenieOsobView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FODetailView.resx">
+      <DependentUpon>FODetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FOBrowseView.resx">
+      <DependentUpon>FOBrowseView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Server\CC.Dol\CC.Dol.csproj">
+      <Project>{f1819d01-6416-43a2-87ee-cc08bfded521}</Project>
+      <Name>CC.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Server\RFO.Dol\RFO.Dol.csproj">
+      <Project>{0591c699-d186-4950-ad9e-6ec048e890a2}</Project>
+      <Name>RFO.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CC.Inf\CC.Inf.csproj">
+      <Project>{9b5bb766-a03c-456a-ae56-30a989e8429d}</Project>
+      <Name>CC.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFO.Inf\RFO.Inf.csproj">
+      <Project>{8921d06f-2076-4611-b071-9177a3029cda}</Project>
+      <Name>RFO.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RIS.Client.Utils\RIS.Client.Utils.csproj">
+      <Project>{99386694-7757-457b-9657-40394e343b00}</Project>
+      <Name>RIS.Client.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ico\ico_add.png" />
+    <Content Include="Ico\ico_back.png" />
+    <Content Include="Ico\ico_blocked.png" />
+    <Content Include="Ico\ico_calendar.png" />
+    <Content Include="Ico\ico_copy.png" />
+    <Content Include="Ico\ico_db_duplicate.png" />
+    <Content Include="Ico\ico_delete.png" />
+    <Content Include="Ico\ico_detail.png" />
+    <Content Include="Ico\ico_disabled.png" />
+    <Content Include="Ico\ico_edit.png" />
+    <Content Include="Ico\ico_edit_cancel.png" />
+    <Content Include="Ico\ico_enabled.png" />
+    <Content Include="Ico\ico_error.png" />
+    <Content Include="Ico\ico_filter.png" />
+    <Content Include="Ico\ico_find.png" />
+    <Content Include="Ico\ico_history.png" />
+    <Content Include="Ico\ico_new.png" />
+    <Content Include="Ico\ico_open_doc.png" />
+    <Content Include="Ico\ico_print.png" />
+    <Content Include="Ico\ico_question.png" />
+    <Content Include="Ico\ico_refresh.png" />
+    <Content Include="Ico\ico_remove.png" />
+    <Content Include="Ico\ico_save.png" />
+    <Content Include="Ico\ico_Schranka.png" />
+    <Content Include="Ico\ico_select.png" />
+    <Content Include="Ico\ico_unblocked.png" />
+    <Content Include="Ico\ico_undelete.png" />
+    <Content Include="Ico\ico_user_blue.png" />
+    <Content Include="Ico\ico_user_green.png" />
+    <Content Include="Ico\ico_user_red.png" />
+    <Content Include="Ico\ico_warning.png" />
+    <Content Include="Ico\ico_xls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Ditec.RIS.CC.Dol.RfoTypPobytu.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.CC.Dol.RfoUzemnyCelok.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Dol.FyzickaOsoba.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Dol.Osoba.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Dol.SparovanaSRFO.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Inf.FOStotoznenieOsobModel.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Inf.OpravneCinnostiModel.datasource" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

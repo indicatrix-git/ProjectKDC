@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D39EA494-64AC-47BD-AD85-3EB787310B86}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ditec.RIS.RFO.Controller</RootNamespace>
+    <AssemblyName>Ditec.RIS.RFO.Controller</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ditec.Iam.Dol">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.Iam.Dol.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.Iam.Public.Dol">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.Iam.Public.Dol.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.RIS.RFO.Dol, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Ditec.RIS.SysFra.WinUI.Shared">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.RIS.SysFra.WinUI.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.DataTypes.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.SysFra.DataTypes.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.WinUI.Shell.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Client\Ditec.WinUI.Shell.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.Core">
+      <HintPath>..\..\SysFra\Stable\3rd\LinFu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SysFra\Stable\3rd\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RFODetailController.cs" />
+    <Compile Include="OpravneCinnostiController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FOStotoznenieOsobController.cs" />
+    <Compile Include="FOBrowseController.cs" />
+    <Compile Include="FODetailController.cs" />
+    <Compile Include="Service References\RfoServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Server\RFO.Dol\RFO.Dol.csproj">
+      <Project>{0591c699-d186-4950-ad9e-6ec048e890a2}</Project>
+      <Name>RFO.Dol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CC.Inf\CC.Inf.csproj">
+      <Project>{9b5bb766-a03c-456a-ae56-30a989e8429d}</Project>
+      <Name>CC.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFO.Inf\RFO.Inf.csproj">
+      <Project>{8921d06f-2076-4611-b071-9177a3029cda}</Project>
+      <Name>RFO.Inf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Dol.FyzickaOsoba.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Dol.NajdenaOsoba.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Dol.Osoba.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Dol.PotvrdzovaniePrijatiaZmienWS.TransEnvTypeOut.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba.datasource" />
+    <None Include="Properties\DataSources\Ditec.RIS.RFO.Dol.ZapisSparovanieOsobRisRfoRetVal.datasource" />
+    <None Include="Service References\RfoServiceReference\Rfo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RfoServiceReference\Rfo1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RfoServiceReference\Rfo2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RfoServiceReference\Rfo3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RfoServiceReference\Rfo4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RfoServiceReference\RfoService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RfoServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RfoServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RfoServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RfoServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RfoServiceReference\Rfo.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
