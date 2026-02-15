@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6FE5BC6C-F4F9-4CA8-B5A3-54168510460E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ditec.RIS.RFO.Dal</RootNamespace>
+    <AssemblyName>Ditec.RIS.RFO.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ditec.RIS.SysFra.DataAccess.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.RIS.SysFra.DataAccess.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.DataTypes.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.DataTypes.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.Infrastructure">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.Infrastructure.Impl">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.Infrastructure.Impl.dll</HintPath>
+    </Reference>
+    <Reference Include="Ditec.SysFra.NhSql.Dal">
+      <HintPath>..\..\SysFra\Stable\Server\Ditec.SysFra.NhSql.Dal.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.Core">
+      <HintPath>..\..\SysFra\Stable\3rd\LinFu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\SysFra\Stable\3rd\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AbstractClassHelper.cs" />
+    <Compile Include="Repository\FyzickaOsobaRepository.cs" />
+    <Compile Include="Repository\FyzickaOsobaStatnaPrislusnostRepository.cs" />
+    <Compile Include="Repository\FyzickaOsobaTitulRepository.cs" />
+    <Compile Include="Repository\MenoRepository.cs" />
+    <Compile Include="Repository\PravnaSposobilostObmedzenieRepository.cs" />
+    <Compile Include="Repository\PravnickaOsobaRepository.cs" />
+    <Compile Include="Repository\PriezviskoRepository.cs" />
+    <Compile Include="Repository\RegionMimoSrRepository.cs" />
+    <Compile Include="Repository\RodnePriezviskoRepository.cs" />
+    <Compile Include="Repository\StotoznenaFyzOsobaRepository.cs" />
+    <Compile Include="Repository\UdajePobytuRepository.cs" />
+    <Compile Include="Repository\VztahovaFyzOsobaRepository.cs" />
+    <Compile Include="Repository\ZakazPobytuRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RFO.Dal.Inf\RFO.Dal.Inf.csproj">
+      <Project>{e4f863e9-5598-4c56-b3ac-3dc1a400c9c7}</Project>
+      <Name>RFO.Dal.Inf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFO.Dol\RFO.Dol.csproj">
+      <Project>{0591c699-d186-4950-ad9e-6ec048e890a2}</Project>
+      <Name>RFO.Dol</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernate\FyzickaOsoba.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NHibernate\FyzickaOsobaStatnaPrislusnost.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\FyzickaOsobaTitul.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\Meno.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\PravnaSposobilostObmedzenie.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\Priezvisko.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\RegionMimoSr.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\RodnePriezvisko.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\StotoznenaFyzOsoba.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\UdajePobytu.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\VztahovaFyzOsoba.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\ZakazPobytu.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernate\PravnickaOsoba.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

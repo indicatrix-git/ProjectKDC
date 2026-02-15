@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ditec.RIS.RFO.Dol" assembly="Ditec.RIS.RFO.Dol">
+  <class name="Ditec.RIS.RFO.Dol.PravnickaOsoba" table="PRAVNICKA_OSOBA">
+      <id name="ID" column="PRAVNICKA_OSOBA_ID" />
+      <property name="PravnaFormaOrgIk" column="PRAVNA_FORMA_ORG_IK" />
+      <property name="KodCinnostiIk" column="KOD_CINNOSTI_IK" />
+      <property name="Ico" column="ICO" />
+      <property name="Dic" column="DIC" />
+      <property name="IcDph" column="IC_DPH" />
+      <property name="Nazov" column="NAZOV" />
+      <property name="DatumVzniku" column="DATUM_VZNIKU" />
+      <property name="DatumZaniku" column="DATUM_ZANIKU" />
+      <property name="InyIdentifikator" column="INY_IDENTIFIKATOR" />
+      <property name="TransakciaId" column="TRANSAKCIA_ID" />
+      <property name="TransakciaZruseneId" column="TRANSAKCIA_ZRUSENE_ID" />
+      <property name="Changed" column="CHANGED" />
+
+  </class>
+
+     <sql-query name="PravnickaOsobaGet">
+        <return class="Ditec.RIS.RFO.Dol.PravnickaOsoba"></return>
+         exec PO.PRAVNICKA_OSOBA_GET :ID
+     </sql-query>
+     <sql-query name="PravnickaOsobaCreate">
+        <return class="Ditec.RIS.RFO.Dol.PravnickaOsoba"></return>
+         exec PO.PRAVNICKA_OSOBA_INS :ID, :PravnaFormaOrgIk, :KodCinnostiIk, :Ico, :Dic, :IcDph, :Nazov, :DatumVzniku, :DatumZaniku, :InyIdentifikator, :TransakciaId, :TransakciaZruseneId, :Changed
+     </sql-query>
+     <sql-query name="PravnickaOsobaList">
+        <return class="Ditec.RIS.RFO.Dol.PravnickaOsoba"></return>
+         exec PO.PRAVNICKA_OSOBA_LIST :PravnaFormaOrgIk, :KodCinnostiIk, :Ico, :Dic, :IcDph, :Nazov, :DatumVzniku, :DatumZaniku, :InyIdentifikator
+     </sql-query>
+     <sql-query name="PravnickaOsobaBrowseCnt">
+         exec PO.PRAVNICKA_OSOBA_LISTCNT :PravnaFormaOrgIk, :KodCinnostiIk, :Ico, :Dic, :IcDph, :Nazov, :DatumVzniku, :DatumZaniku, :InyIdentifikator
+     </sql-query>
+     <sql-query name="PravnickaOsobaBrowsePg">
+        <return class="Ditec.RIS.RFO.Dol.PravnickaOsoba"></return>
+         exec PO.PRAVNICKA_OSOBA_LISTPG :PravnaFormaOrgIk, :KodCinnostiIk, :Ico, :Dic, :IcDph, :Nazov, :DatumVzniku, :DatumZaniku, :InyIdentifikator, :CurrentPage, :RecordsPerPage
+     </sql-query>
+     <sql-query name="PravnickaOsobaUpdate">
+        <return class="Ditec.RIS.RFO.Dol.PravnickaOsoba"></return>
+         exec PO.PRAVNICKA_OSOBA_UPD :ID, :PravnaFormaOrgIk, :KodCinnostiIk, :Ico, :Dic, :IcDph, :Nazov, :DatumVzniku, :DatumZaniku, :InyIdentifikator, :TransakciaId, :TRANSAKCIA_ID_OLD
+     </sql-query>
+     <sql-query name="PravnickaOsobaDelete">
+         exec PO.PRAVNICKA_OSOBA_DEL :ID, :TransakciaZruseneId
+     </sql-query>
+
+</hibernate-mapping>
+  

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ditec.RIS.RFO.Dol" assembly="Ditec.RIS.RFO.Dol">
+  <class name="Ditec.RIS.RFO.Dol.Priezvisko" table="PRIEZVISKO">
+    <id name="ID" column="PRIEZVISKO_ID" />
+    <property name="FyzickaOsobaId" column="FYZICKA_OSOBA_ID" />
+    <property name="Hodnota" column="HODNOTA" />
+    <property name="Poradie" column="PORADIE" />
+    <property name="TransakciaId" column="TRANSAKCIA_ID" />
+    <property name="TransakciaZruseneId" column="TRANSAKCIA_ZRUSENE_ID" />
+    <property name="Changed" column="CHANGED" />
+    <property name="Identifikator" column="IDENTIFIKATOR" />
+  </class>
+
+  <sql-query name="PriezviskoGet">
+    <return class="Ditec.RIS.RFO.Dol.Priezvisko"></return>
+    exec FO.PRIEZVISKO_GET :ID
+  </sql-query>
+  <sql-query name="PriezviskoCreate">
+    <return class="Ditec.RIS.RFO.Dol.Priezvisko"></return>
+    exec FO.PRIEZVISKO_INS :ID, :FyzickaOsobaId, :Hodnota, :Poradie, :TransakciaId, :TransakciaZruseneId, :Changed, :Identifikator
+  </sql-query>
+  <sql-query name="PriezviskoDelete">
+    exec FO.PRIEZVISKO_DEL :ID, :TransakciaZruseneId
+  </sql-query>
+  <sql-query name="PriezviskoList">
+    <return class="Ditec.RIS.RFO.Dol.Priezvisko"></return>
+    exec FO.PRIEZVISKO_LIST :FyzickaOsobaId, :Hodnota, :Poradie, :Identifikator
+  </sql-query>
+  <sql-query name="PriezviskoBrowsePg">
+    <return class="Ditec.RIS.RFO.Dol.Priezvisko"></return>
+    exec FO.PRIEZVISKO_LISTPG :FyzickaOsobaId, :Hodnota, :Poradie, :Identifikator, :CurrentPage, :RecordsPerPage
+  </sql-query>
+  <sql-query name="PriezviskoUpdate">
+    <return class="Ditec.RIS.RFO.Dol.Priezvisko"></return>
+    exec FO.PRIEZVISKO_UPD :ID, :FyzickaOsobaId, :Hodnota, :Poradie, :TransakciaId, :TRANSAKCIA_ID_OLD, :Identifikator
+  </sql-query>
+  <sql-query name="PriezviskoBrowseCnt">
+    exec FO.PRIEZVISKO_LISTCNT :FyzickaOsobaId, :Hodnota, :Poradie, :Identifikator
+  </sql-query>
+
+  <sql-query name="PriezviskoFOGet">
+    <return class="Ditec.RIS.RFO.Dol.Priezvisko"></return>
+    exec FO.PRIEZVISKO_FYZICKA_OSOBA_GET   :FYZICKA_OSOBA_ID
+  </sql-query>
+
+</hibernate-mapping>

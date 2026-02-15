@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ditec.RIS.RFO.Dol" assembly="Ditec.RIS.RFO.Dol" auto-import ="false">
+  <class name="Ditec.RIS.RFO.Dol.UdajePobytu" table="UDAJE_POBYTU">
+    <id name="ID" column="UDAJE_POBYTU_ID" />
+    <property name="FyzickaOsobaId" column="FYZICKA_OSOBA_ID" />
+    <property name="TypPobytuIk" column="TYP_POBYTU_IK" />
+    <property name="RfoOkresIk" column="RFO_OKRES_IK" />
+    <property name="RfoObecIk" column="RFO_OBEC_IK" />
+    <property name="RfoStatIk" column="RFO_STAT_IK" />
+    <property name="RfoCastObceIk" column="RFO_CAST_OBCE_IK" />
+    <property name="RfoUlicaIk" column="RFO_ULICA_IK" />
+    <property name="MimoSr" column="MIMO_SR" />
+    <property name="Ulica" column="ULICA" />
+    <property name="OrientacneCislo" column="ORIENTACNE_CISLO" />
+    <property name="SupisneCislo" column="SUPISNE_CISLO" />
+    <property name="MiestoMimoSr" column="MIESTO_MIMO_SR" />
+    <property name="OkresMimoSr" column="OKRES_MIMO_SR" />
+    <property name="ObecMimoSr" column="OBEC_MIMO_SR" />
+    <property name="CastObceMimoSr" column="CAST_OBCE_MIMO_SR" />
+    <property name="UlicaMimoSr" column="ULICA_MIMO_SR" />
+    <property name="OrientacneCisloMimoSr" column="ORIENTACNE_CISLO_MIMO_SR" />
+    <property name="SupisneCisloMimoSr" column="SUPISNE_CISLO_MIMO_SR" />
+    <property name="Identifikator" column="IDENTIFIKATOR" />
+    <property name="TransakciaId" column="TRANSAKCIA_ID" />
+    <property name="TransakciaZruseneId" column="TRANSAKCIA_ZRUSENE_ID" />
+    <property name="Changed" column="CHANGED" />
+    <property name="DatumPrihlaseniaNaPobyt" column="PLATNOST_OD" />
+    <property name="DatumUkonceniaPobytu" column="PLATNOST_DO" />
+  </class>
+
+  <sql-query name="UdajePobytuFOGet">
+    <return class="Ditec.RIS.RFO.Dol.UdajePobytu"></return>
+    exec FO.UDAJE_POBYTU_GET :ID
+  </sql-query>
+  <sql-query name="UdajePobytuFOCreate">
+    <return class="Ditec.RIS.RFO.Dol.UdajePobytu"></return>
+    exec FO.UDAJE_POBYTU_INS :ID, :FyzickaOsobaId, :TypPobytuIk, :RfoOkresIk, :RfoObecIk, :RfoStatIk, :RfoCastObceIk, :RfoUlicaIk, :MimoSr, :Ulica, :OrientacneCislo, :SupisneCislo, :MiestoMimoSr, :OkresMimoSr, :ObecMimoSr, :UlicaMimoSr, :CastObceMimoSr, :OrientacneCisloMimoSr, :SupisneCisloMimoSr, :Identifikator, :DatumPrihlaseniaNaPobyt, :DatumUkonceniaPobytu, :TransakciaId, :TransakciaZruseneId, :Changed
+  </sql-query>
+  <sql-query name="UdajePobytuFOList">
+    <return class="Ditec.RIS.RFO.Dol.UdajePobytu"></return>
+    exec FO.UDAJE_POBYTU_LIST :FyzickaOsobaId, :TypPobytuIk, :RfoOkresIk, :RfoObecIk, :RfoStatIk, :RfoCastObceIk, :RfoUlicaIk, :MimoSr, :Ulica, :OrientacneCislo, :SupisneCislo, :MiestoMimoSr, :OkresMimoSr, :ObecMimoSr, :CastObceMimoSr, :UlicaMimoSr, :OrientacneCisloMimoSr, :SupisneCisloMimoSr, :Identifikator, :DatumPrihlaseniaNaPobyt, :DatumUkonceniaPobytu
+  </sql-query>
+  <sql-query name="UdajePobytuFOBrowseCnt">
+    exec FO.UDAJE_POBYTU_LISTCNT :FyzickaOsobaId, :TypPobytuIk, :RfoOkresIk, :RfoObecIk, :RfoStatIk, :RfoCastObceIk, :RfoUlicaIk, :MimoSr, :Ulica, :OrientacneCislo, :SupisneCislo, :MiestoMimoSr, :OkresMimoSr, :ObecMimoSr, :CastObceMimoSr, :UlicaMimoSr, :OrientacneCisloMimoSr, :SupisneCisloMimoSr, :Identifikator, :DatumPrihlaseniaNaPobyt, :DatumUkonceniaPobytu
+  </sql-query>
+  <sql-query name="UdajePobytuFOBrowsePg">
+    <return class="Ditec.RIS.RFO.Dol.UdajePobytu"></return>
+    exec FO.UDAJE_POBYTU_LISTPG :FyzickaOsobaId, :TypPobytuIk, :RfoOkresIk, :RfoObecIk, :RfoStatIk, :RfoCastObceIk, :RfoUlicaIk, :MimoSr, :Ulica, :OrientacneCislo, :SupisneCislo, :MiestoMimoSr, :OkresMimoSr, :ObecMimoSr, :CastObceMimoSr, :UlicaMimoSr, :OrientacneCisloMimoSr, :SupisneCisloMimoSr, :Identifikator, :DatumPrihlaseniaNaPobyt, :DatumUkonceniaPobytu, :CurrentPage, :RecordsPerPage
+  </sql-query>
+  <sql-query name="UdajePobytuFOUpdate">
+    <return class="Ditec.RIS.RFO.Dol.UdajePobytu"></return>
+    exec FO.UDAJE_POBYTU_UPD :ID, :FyzickaOsobaId, :TypPobytuIk, :RfoOkresIk, :RfoObecIk, :RfoStatIk, :RfoCastObceIk, :RfoUlicaIk, :MimoSr, :Ulica, :OrientacneCislo, :SupisneCislo, :MiestoMimoSr, :OkresMimoSr, :ObecMimoSr, :CastObceMimoSr, :UlicaMimoSr, :OrientacneCisloMimoSr, :SupisneCisloMimoSr, :Identifikator, :DatumPrihlaseniaNaPobyt, :DatumUkonceniaPobytu, :TransakciaId, :TRANSAKCIA_ID_OLD
+  </sql-query>
+  <sql-query name="UdajePobytuFODelete">
+    exec FO.UDAJE_POBYTU_DEL :ID, :TransakciaZruseneId
+  </sql-query>
+  <sql-query name="UdajePobytuFyzOsGet">
+    <return class="Ditec.RIS.RFO.Dol.UdajePobytu"></return>
+    exec FO.UDAJE_POBYTU_FYZICKA_OSOBA_GET  :FYZICKA_OSOBA_ID
+  </sql-query>
+
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ditec.RIS.RFO.Dol" assembly="Ditec.RIS.RFO.Dol">
+  <class name="Ditec.RIS.RFO.Dol.VztahovaFyzOsoba" table="VZTAHOVA_FYZ_OSOBA">
+    <id name="ID" column="VZTAHOVA_FYZ_OSOBA_ID" />
+    <property name="FyzickaOsobaId" column="FYZICKA_OSOBA_ID" />
+    <property name="FyzickaOsobaVztahId" column="FYZICKA_OSOBA_VZTAH_ID" />
+    <property name="RfoTypRodinnehoVztahuIk" column="RFO_TYP_RODINNEHO_VZTAHU_IK" />
+    <property name="RfoTypRoleVRodiVztahuIk" column="RFO_TYP_ROLE_V_RODI_VZTAHU_IK" />
+    <property name="IfoVztahovejOsoby" column="IFO_VZTAHOVEJ_OSOBY" />
+    <property name="TransakciaId" column="TRANSAKCIA_ID" />
+    <property name="TransakciaZruseneId" column="TRANSAKCIA_ZRUSENE_ID" />
+    <property name="Changed" column="CHANGED" />
+    <property name="Identifikator" column="IDENTIFIKATOR" />
+  </class>
+
+  <sql-query name="VztahovaFyzOsobaGet">
+    <return class="Ditec.RIS.RFO.Dol.VztahovaFyzOsoba"></return>
+    exec FO.VZTAHOVA_FYZ_OSOBA_GET :ID
+  </sql-query>
+  <sql-query name="VztahovaFyzOsobaCreate">
+    <return class="Ditec.RIS.RFO.Dol.VztahovaFyzOsoba"></return>
+    exec FO.VZTAHOVA_FYZ_OSOBA_INS :ID, :FyzickaOsobaId, :FyzickaOsobaVztahId, :RfoTypRodinnehoVztahuIk, :RfoTypRoleVRodiVztahuIk, :IfoVztahovejOsoby, :TransakciaId, :TransakciaZruseneId, :Changed, :Identifikator
+  </sql-query>
+  <sql-query name="VztahovaFyzOsobaList">
+    <return class="Ditec.RIS.RFO.Dol.VztahovaFyzOsoba"></return>
+    exec FO.VZTAHOVA_FYZ_OSOBA_LIST :FyzickaOsobaId, :FyzickaOsobaVztahId, :RfoTypRodinnehoVztahuIk, :RfoTypRoleVRodiVztahuIk, :IfoVztahovejOsoby, :Identifikator
+  </sql-query>
+  <sql-query name="VztahovaFyzOsobaBrowseCnt">
+    exec FO.VZTAHOVA_FYZ_OSOBA_LISTCNT :FyzickaOsobaId, :FyzickaOsobaVztahId, :RfoTypRodinnehoVztahuIk, :RfoTypRoleVRodiVztahuIk, :IfoVztahovejOsoby, :Identifikator
+  </sql-query>
+  <sql-query name="VztahovaFyzOsobaUpdate">
+    <return class="Ditec.RIS.RFO.Dol.VztahovaFyzOsoba"></return>
+    exec FO.VZTAHOVA_FYZ_OSOBA_UPD :ID, :FyzickaOsobaId, :FyzickaOsobaVztahId, :RfoTypRodinnehoVztahuIk, :RfoTypRoleVRodiVztahuIk, :IfoVztahovejOsoby, :TransakciaId, :TRANSAKCIA_ID_OLD, :Identifikator
+  </sql-query>
+  <sql-query name="VztahovaFyzOsobaBrowsePg">
+    <return class="Ditec.RIS.RFO.Dol.VztahovaFyzOsoba"></return>
+    exec FO.VZTAHOVA_FYZ_OSOBA_LISTPG :FyzickaOsobaId, :FyzickaOsobaVztahId, :RfoTypRodinnehoVztahuIk, :RfoTypRoleVRodiVztahuIk, :IfoVztahovejOsoby, :Identifikator, :CurrentPage, :RecordsPerPage
+  </sql-query>
+  <sql-query name="VztahovaFyzOsobaDelete">
+    exec FO.VZTAHOVA_FYZ_OSOBA_DEL :ID, :TransakciaZruseneId
+  </sql-query>
+  <sql-query name="VztahovaFyzOsobaFOGet">
+    <return class="Ditec.RIS.RFO.Dol.VztahovaFyzOsoba"></return>
+    exec FO.VZTAHOVA_FYZ_OSOBA_FO_GET  :FYZICKA_OSOBA_ID
+  </sql-query>
+  <sql-query name="VztahovaFyzOsobaFORodic">
+    <return class="Ditec.RIS.RFO.Dol.VztahovaFyzOsoba"></return>
+    exec FO.VZTAHOVA_FYZ_OSOBA_RODIC  :FYZICKA_OSOBA_ID, :DatumSimulacie
+  </sql-query>
+
+</hibernate-mapping>

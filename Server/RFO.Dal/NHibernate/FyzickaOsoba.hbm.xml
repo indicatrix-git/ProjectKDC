@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ditec.RIS.RFO.Dol" assembly="Ditec.RIS.RFO.Dol">
+  <class name="Ditec.RIS.RFO.Dol.FyzickaOsoba" table="FYZICKA_OSOBA">
+    <id name="ID" column="FYZICKA_OSOBA_ID" />
+    <property name="RfoPohlavieIk" column="RFO_POHLAVIE_IK" />
+    <property name="RfoRodinnyStavIk" column="RFO_RODINNY_STAV_IK" />
+    <property name="RfoTypOsobyIk" column="RFO_TYP_OSOBY_IK" />
+    <property name="RfoNarodnostIk" column="RFO_NARODNOST_IK" />
+    <property name="RfoStupenZverejneniaIk" column="RFO_STUPEN_ZVEREJNENIA_IK" />
+    <property name="StatNarodeniaIk" column="STAT_NARODENIA_IK" />
+    <property name="ObecNarodeniaIk" column="OBEC_NARODENIA_IK" />
+    <property name="Eduid" column="EDUID" />
+    <property name="Ifo" column="IFO" />
+    <property name="RodneCislo" column="RODNE_CISLO" />
+    <property name="DatumNarodenia" column="DATUM_NARODENIA" />
+    <property name="MiestoNarodeniaIne" column="MIESTO_NARODENIA_INE" />
+    <property name="DatumUmrtia" column="DATUM_UMRTIA" />
+    <property name="DatumPravoplatnostiRozh" column="DATUM_PRAVOPLATNOSTI_ROZH" />
+    <property name="ZaujmovaOsoba" column="ZAUJMOVA_OSOBA" />
+    <property name="MenoZobrazovane" column="MENO_ZOBRAZOVANE" />
+    <property name="PriezviskoZobrazovane" column="PRIEZVISKO_ZOBRAZOVANE" />
+    <property name="RodneMenoZobrazovane" column="RODNE_MENO_ZOBRAZOVANE" />
+    <property name="Zneplatnena" column="ZNEPLATNENA" />
+    <property name="IdentifikatorZmenovejDavky" column="IDENTIFIKATOR_ZMENOVEJ_DAVKY" />
+    <property name="Bifo" column="BIFO" />
+    <property name="TransakciaId" column="TRANSAKCIA_ID" />
+    <property name="TransakciaZruseneId" column="TRANSAKCIA_ZRUSENE_ID" />
+    <property name="Changed" column="CHANGED" />
+    <property name="RfoOkresNarodeniaIk" column="OKRES_NARODENIA_IK" />
+    <property name="RfoUzemnyCelokUmrtiaIk" column="OBEC_UMRTIA_IK" />
+    <property name="OkresNarodeniaMimoCiselnik" column="OKRES_NARODENIA" />
+    <property name="MiestoUmrtiaMimoCiselnik" column="MIESTO_UMRTIA" />
+  </class>
+
+  <sql-query name="FyzickaOsobaCreate">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsoba"></return>
+    exec FO.FYZICKA_OSOBA_INS :ID, :RfoPohlavieIk, :RfoRodinnyStavIk, :RfoTypOsobyIk, :RfoNarodnostIk, :RfoStupenZverejneniaIk, :StatNarodeniaIk, :ObecNarodeniaIk, :RfoOkresNarodeniaIk, :RfoUzemnyCelokUmrtiaIk, :Eduid, :Ifo, :RodneCislo, :DatumNarodenia, :MiestoNarodeniaIne, :DatumUmrtia, :DatumPravoplatnostiRozh, :ZaujmovaOsoba, :MenoZobrazovane, :PriezviskoZobrazovane, :RodneMenoZobrazovane, :Zneplatnena, :IdentifikatorZmenovejDavky, :Bifo, :OkresNarodeniaMimoCiselnik, :MiestoUmrtiaMimoCiselnik, :TransakciaId, :TransakciaZruseneId, :Changed
+  </sql-query>
+  <sql-query name="FyzickaOsobaUpdate">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsoba"></return>
+    exec FO.FYZICKA_OSOBA_UPD :ID, :RfoPohlavieIk, :RfoRodinnyStavIk, :RfoTypOsobyIk, :RfoNarodnostIk, :RfoStupenZverejneniaIk, :StatNarodeniaIk, :ObecNarodeniaIk, :RfoOkresNarodeniaIk, :RfoUzemnyCelokUmrtiaIk, :Eduid, :Ifo, :RodneCislo, :DatumNarodenia, :MiestoNarodeniaIne, :DatumUmrtia, :DatumPravoplatnostiRozh, :ZaujmovaOsoba, :MenoZobrazovane, :PriezviskoZobrazovane, :RodneMenoZobrazovane, :Zneplatnena, :IdentifikatorZmenovejDavky, :Bifo, :OkresNarodeniaMimoCiselnik, :MiestoUmrtiaMimoCiselnik, :TransakciaId, :TRANSAKCIA_ID_OLD
+  </sql-query>
+  <sql-query name="FyzickaOsobaGet">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsoba"></return>
+    exec FO.FYZICKA_OSOBA_GET :ID
+  </sql-query>
+  <sql-query name="FyzickaOsobaList">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsoba"></return>
+    exec FO.FYZICKA_OSOBA_LIST :RfoPohlavieIk, :RfoRodinnyStavIk, :RfoTypOsobyIk, :RfoNarodnostIk, :RfoStupenZverejneniaIk, :StatNarodeniaIk, :ObecNarodeniaIk, :RfoOkresNarodeniaIk, :RfoUzemnyCelokUmrtiaIk, :Eduid, :Ifo, :RodneCislo, :DatumNarodenia, :MiestoNarodeniaIne, :DatumUmrtia, :DatumPravoplatnostiRozh, :ZaujmovaOsoba, :MenoZobrazovane, :PriezviskoZobrazovane, :RodneMenoZobrazovane, :Zneplatnena, :IdentifikatorZmenovejDavky, :Bifo, :OkresNarodeniaMimoCiselnik, :MiestoUmrtiaMimoCiselnik
+  </sql-query>
+  <sql-query name="FyzickaOsobaBrowseCnt">
+    exec FO.FYZICKA_OSOBA_LISTCNT :RfoPohlavieIk, :RfoRodinnyStavIk, :RfoTypOsobyIk, :RfoNarodnostIk, :RfoStupenZverejneniaIk, :StatNarodeniaIk, :ObecNarodeniaIk, :RfoOkresNarodeniaIk, :RfoUzemnyCelokUmrtiaIk, :Eduid, :Ifo, :RodneCislo, :DatumNarodenia, :MiestoNarodeniaIne, :DatumUmrtia, :DatumPravoplatnostiRozh, :ZaujmovaOsoba, :MenoZobrazovane, :PriezviskoZobrazovane, :RodneMenoZobrazovane, :Zneplatnena, :IdentifikatorZmenovejDavky, :Bifo, :OkresNarodeniaMimoCiselnik, :MiestoUmrtiaMimoCiselnik, :SparovanieSRFO
+  </sql-query>
+  <sql-query name="FyzickaOsobaBrowsePg">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsoba"></return>
+    exec FO.FYZICKA_OSOBA_LISTPG :RfoPohlavieIk, :RfoRodinnyStavIk, :RfoTypOsobyIk, :RfoNarodnostIk, :RfoStupenZverejneniaIk, :StatNarodeniaIk, :ObecNarodeniaIk, :RfoOkresNarodeniaIk, :RfoUzemnyCelokUmrtiaIk, :Eduid, :Ifo, :RodneCislo, :DatumNarodenia, :MiestoNarodeniaIne, :DatumUmrtia, :DatumPravoplatnostiRozh, :ZaujmovaOsoba, :MenoZobrazovane, :PriezviskoZobrazovane, :RodneMenoZobrazovane, :Zneplatnena, :IdentifikatorZmenovejDavky, :Bifo, :OkresNarodeniaMimoCiselnik, :MiestoUmrtiaMimoCiselnik, :CurrentPage, :RecordsPerPage, :SparovanieSRFO
+  </sql-query>
+  <sql-query name="FyzickaOsobaDelete">
+    exec FO.FYZICKA_OSOBA_DEL :ID, :TransakciaZruseneId
+  </sql-query>
+
+  <sql-query name="FyzickaOsobaFind">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsoba"></return>
+    exec FO.FYZICKA_OSOBA_FIND :MENO, :PRIEZVISKO, :RODNE_PRIEZVISKO, :RODNE_CISLO, :DATUM_NARODENIA, :RFO_STUPEN_ZVEREJNENIA_IK
+  </sql-query>
+
+  <sql-query name="FyzickaOsobaFindVazby">
+    exec FO.FYZICKA_OSOBA_VAZBY_LIST :EDUID
+  </sql-query>
+
+  <sql-query name="FyzickaOsobaEduIdGet">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsoba"></return>
+	exec FO.FYZICKA_OSOBA_EDUID_GET :EDUID
+  </sql-query>
+
+  <sql-query name="FyzickaOsobaEduIdStotoznenaGet">
+	<return class="Ditec.RIS.RFO.Dol.FyzickaOsoba"></return>
+	exec FO.FYZICKA_OSOBA_EDUID_STOTOZNENA_GET :EDUID
+  </sql-query>
+
+  <sql-query name="FyzickaOsobaIfoList">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsoba"></return>
+    exec FO.FYZICKA_OSOBA_IFO_LIST :RfoPohlavieIk, :RfoRodinnyStavIk, :RfoTypOsobyIk, :RfoNarodnostIk, :RfoStupenZverejneniaIk, :StatNarodeniaIk, :ObecNarodeniaIk, :RfoOkresNarodeniaIk, :RfoUzemnyCelokUmrtiaIk, :Eduid, :Ifo, :RodneCislo, :DatumNarodenia, :MiestoNarodeniaIne, :DatumUmrtia, :DatumPravoplatnostiRozh, :ZaujmovaOsoba, :MenoZobrazovane, :PriezviskoZobrazovane, :RodneMenoZobrazovane, :Zneplatnena, :IdentifikatorZmenovejDavky, :Bifo, :OkresNarodeniaMimoCiselnik, :MiestoUmrtiaMimoCiselnik
+  </sql-query>
+
+</hibernate-mapping>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ditec.RIS.RFO.Dol" assembly="Ditec.RIS.RFO.Dol">
+  <class name="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba" table="STOTOZNENA_FYZ_OSOBA">
+      <id name="ID" column="STOTOZNENA_FYZ_OSOBA_ID" />
+      <property name="FyzickaOsobaId" column="FYZICKA_OSOBA_ID" />
+      <property name="FyzickaOsobaPovodnaId" column="FYZICKA_OSOBA_POVODNA_ID" />
+      <property name="EduidPovodne" column="EDUID_POVODNE" />
+      <property name="IfoPovodne" column="IFO_POVODNE" />
+      <property name="TransakciaId" column="TRANSAKCIA_ID" />
+      <property name="TransakciaZruseneId" column="TRANSAKCIA_ZRUSENE_ID" />
+      <property name="Changed" column="CHANGED" />
+
+  </class>
+
+     <sql-query name="StotoznenaFyzOsobaGet">
+        <return class="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba"></return>
+         exec FO.STOTOZNENA_FYZ_OSOBA_GET :ID
+     </sql-query>
+     <sql-query name="StotoznenaFyzOsobaCreate">
+        <return class="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba"></return>
+         exec FO.STOTOZNENA_FYZ_OSOBA_INS :ID, :FyzickaOsobaId, :FyzickaOsobaPovodnaId, :EduidPovodne, :IfoPovodne, :TransakciaId, :TransakciaZruseneId, :Changed
+     </sql-query>
+     <sql-query name="StotoznenaFyzOsobaList">
+        <return class="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba"></return>
+         exec FO.STOTOZNENA_FYZ_OSOBA_LIST :FyzickaOsobaId, :FyzickaOsobaPovodnaId, :EduidPovodne, :IfoPovodne
+     </sql-query>
+     <sql-query name="StotoznenaFyzOsobaBrowseCnt">
+         exec FO.STOTOZNENA_FYZ_OSOBA_LISTCNT :FyzickaOsobaId, :FyzickaOsobaPovodnaId, :EduidPovodne, :IfoPovodne
+     </sql-query>
+     <sql-query name="StotoznenaFyzOsobaBrowsePg">
+        <return class="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba"></return>
+         exec FO.STOTOZNENA_FYZ_OSOBA_LISTPG :FyzickaOsobaId, :FyzickaOsobaPovodnaId, :EduidPovodne, :IfoPovodne, :CurrentPage, :RecordsPerPage
+     </sql-query>
+     <sql-query name="StotoznenaFyzOsobaUpdate">
+        <return class="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba"></return>
+         exec FO.STOTOZNENA_FYZ_OSOBA_UPD :ID, :FyzickaOsobaId, :FyzickaOsobaPovodnaId, :EduidPovodne, :IfoPovodne, :TransakciaId, :TRANSAKCIA_ID_OLD
+     </sql-query>
+     <sql-query name="StotoznenaFyzOsobaDelete">
+         exec FO.STOTOZNENA_FYZ_OSOBA_DEL :ID, :TransakciaZruseneId
+     </sql-query>
+    <sql-query name="StotoznenaFyzOsobaIfoList">
+      <return class="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba"></return>
+      exec FO.STOTOZNENA_FYZ_OSOBA_IFO_LIST :FyzickaOsobaId, :FyzickaOsobaPovodnaId, :EduidPovodne, :IfoPovodne
+    </sql-query>
+  <sql-query name="StotoznenaFyzOsobaFOGet">
+    <return class="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba"></return>
+    exec FO.STOTOZNENA_FYZ_OSOBA_FO_GET  :FYZICKA_OSOBA_ID
+  </sql-query>
+  <sql-query name="StotoznenaFyzickaOsobaEDUIDList">
+    <return class="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba"></return>
+    exec FO.FYZICKA_OSOBA_EDUID_STOT_GET  :EDUID
+  </sql-query>
+  <sql-query name="StotoznenaFyzickaOsobaFind">
+    <return class="Ditec.RIS.RFO.Dol.StotoznenaFyzOsoba"></return>
+    exec FO.FYZICKA_OSOBA_STOT_FIND :MENO, :PRIEZVISKO, :RODNE_PRIEZVISKO, :RODNE_CISLO, :DATUM_NARODENIA, :RFO_STUPEN_ZVEREJNENIA_IK
+  </sql-query>
+
+</hibernate-mapping>
+  

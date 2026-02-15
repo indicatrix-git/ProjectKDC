@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ditec.RIS.RFO.Dol" assembly="Ditec.RIS.RFO.Dol">
+  <class name="Ditec.RIS.RFO.Dol.RegionMimoSr" table="REGION_MIMO_SR">
+      <id name="ID" column="REGION_MIMO_SR_ID" />
+      <property name="UdajePobytuId" column="UDAJE_POBYTU_ID" />
+      <property name="Poradie" column="PORADIE" />
+      <property name="Hodnota" column="HODNOTA" />
+      <property name="TransakciaId" column="TRANSAKCIA_ID" />
+      <property name="TransakciaZruseneId" column="TRANSAKCIA_ZRUSENE_ID" />
+      <property name="Changed" column="CHANGED" />
+
+  </class>
+
+     <sql-query name="RegionMimoSrGet">
+        <return class="Ditec.RIS.RFO.Dol.RegionMimoSr"></return>
+         exec FO.REGION_MIMO_SR_GET :ID
+     </sql-query>
+     <sql-query name="RegionMimoSrCreate">
+        <return class="Ditec.RIS.RFO.Dol.RegionMimoSr"></return>
+         exec FO.REGION_MIMO_SR_INS :ID, :UdajePobytuId, :Poradie, :Hodnota, :TransakciaId, :TransakciaZruseneId, :Changed
+     </sql-query>
+     <sql-query name="RegionMimoSrDelete">
+         exec FO.REGION_MIMO_SR_DEL :ID, :TransakciaZruseneId
+     </sql-query>
+     <sql-query name="RegionMimoSrList">
+        <return class="Ditec.RIS.RFO.Dol.RegionMimoSr"></return>
+         exec FO.REGION_MIMO_SR_LIST :UdajePobytuId, :Poradie, :Hodnota
+     </sql-query>
+     <sql-query name="RegionMimoSrBrowsePg">
+        <return class="Ditec.RIS.RFO.Dol.RegionMimoSr"></return>
+         exec FO.REGION_MIMO_SR_LISTPG :UdajePobytuId, :Poradie, :Hodnota, :CurrentPage, :RecordsPerPage
+     </sql-query>
+     <sql-query name="RegionMimoSrUpdate">
+        <return class="Ditec.RIS.RFO.Dol.RegionMimoSr"></return>
+         exec FO.REGION_MIMO_SR_UPD :ID, :UdajePobytuId, :Poradie, :Hodnota, :TransakciaId, :TRANSAKCIA_ID_OLD
+     </sql-query>
+     <sql-query name="RegionMimoSrBrowseCnt">
+         exec FO.REGION_MIMO_SR_LISTCNT :UdajePobytuId, :Poradie, :Hodnota
+     </sql-query>
+
+</hibernate-mapping>
+  

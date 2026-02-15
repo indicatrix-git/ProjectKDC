@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ditec.RIS.RFO.Dol" assembly="Ditec.RIS.RFO.Dol">
+  <class name="Ditec.RIS.RFO.Dol.PravnaSposobilostObmedzenie" table="PRAVNA_SPOSOBILOST_OBMEDZENIE">
+    <id name="ID" column="PRAVNA_SPOSOBILOST_OBMEDZENIE_ID" />
+    <property name="FyzickaOsobaId" column="FYZICKA_OSOBA_ID" />
+    <property name="RfoSposobilostPravUkonIk" column="RFO_SPOSOBILOST_PRAV_UKON_IK" />
+    <property name="PlatnostOd" column="PLATNOST_OD" />
+    <property name="PlatnostDo" column="PLATNOST_DO" />
+    <property name="Poznamka" column="POZNAMKA" />
+    <property name="Identifikator" column="IDENTIFIKATOR" />
+    <property name="TransakciaId" column="TRANSAKCIA_ID" />
+    <property name="TransakciaZruseneId" column="TRANSAKCIA_ZRUSENE_ID" />
+    <property name="Changed" column="CHANGED" />
+
+  </class>
+
+  <sql-query name="PravnaSposobilostObmedzenieGet">
+    <return class="Ditec.RIS.RFO.Dol.PravnaSposobilostObmedzenie"></return>
+    exec FO.PRAVNA_SPOSOBILOST_OBMEDZENIE_GET :ID
+  </sql-query>
+  <sql-query name="PravnaSposobilostObmedzenieCreate">
+    <return class="Ditec.RIS.RFO.Dol.PravnaSposobilostObmedzenie"></return>
+    exec FO.PRAVNA_SPOSOBILOST_OBMEDZENIE_INS :ID, :FyzickaOsobaId, :RfoSposobilostPravUkonIk, :PlatnostOd, :PlatnostDo, :Poznamka, :Identifikator, :TransakciaId, :TransakciaZruseneId, :Changed
+  </sql-query>
+  <sql-query name="PravnaSposobilostObmedzenieList">
+    <return class="Ditec.RIS.RFO.Dol.PravnaSposobilostObmedzenie"></return>
+    exec FO.PRAVNA_SPOSOBILOST_OBMEDZENIE_LIST :FyzickaOsobaId, :RfoSposobilostPravUkonIk, :PlatnostOd, :PlatnostDo, :Poznamka, :Identifikator
+  </sql-query>
+  <sql-query name="PravnaSposobilostObmedzenieBrowseCnt">
+    exec FO.PRAVNA_SPOSOBILOST_OBMEDZENIE_LISTCNT :FyzickaOsobaId, :RfoSposobilostPravUkonIk, :PlatnostOd, :PlatnostDo, :Poznamka, :Identifikator
+  </sql-query>
+  <sql-query name="PravnaSposobilostObmedzenieBrowsePg">
+    <return class="Ditec.RIS.RFO.Dol.PravnaSposobilostObmedzenie"></return>
+    exec FO.PRAVNA_SPOSOBILOST_OBMEDZENIE_LISTPG :FyzickaOsobaId, :RfoSposobilostPravUkonIk, :PlatnostOd, :PlatnostDo, :Poznamka, :Identifikator, :CurrentPage, :RecordsPerPage
+  </sql-query>
+  <sql-query name="PravnaSposobilostObmedzenieUpdate">
+    <return class="Ditec.RIS.RFO.Dol.PravnaSposobilostObmedzenie"></return>
+    exec FO.PRAVNA_SPOSOBILOST_OBMEDZENIE_UPD :ID, :FyzickaOsobaId, :RfoSposobilostPravUkonIk, :PlatnostOd, :PlatnostDo, :Poznamka, :Identifikator, :TransakciaId, :TRANSAKCIA_ID_OLD
+  </sql-query>
+  <sql-query name="PravnaSposobilostObmedzenieDelete">
+    exec FO.PRAVNA_SPOSOBILOST_OBMEDZENIE_DEL :ID, :TransakciaZruseneId
+  </sql-query>
+  <sql-query name="PravnaSposobilostObmedzenieFOGet">
+    <return class="Ditec.RIS.RFO.Dol.PravnaSposobilostObmedzenie"></return>
+    exec FO.PRAVNA_SPOSOBILOST_OBMEDZENIE_FO_GET  :FYZICKA_OSOBA_ID
+  </sql-query>
+
+
+</hibernate-mapping>

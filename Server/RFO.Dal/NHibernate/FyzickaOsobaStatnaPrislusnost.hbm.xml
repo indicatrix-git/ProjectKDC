@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ditec.RIS.RFO.Dol" assembly="Ditec.RIS.RFO.Dol">
+  <class name="Ditec.RIS.RFO.Dol.FyzickaOsobaStatnaPrislusnost" table="FYZICKA_OSOBA_STATNA_PRISLUSNOST">
+    <id name="ID" column="FYZICKA_OSOBA_STATNA_PRISLUSNOST_ID" />
+    <property name="FyzickaOsobaId" column="FYZICKA_OSOBA_ID" />
+    <property name="RfoStatIk" column="RFO_STAT_IK" />
+    <property name="TransakciaId" column="TRANSAKCIA_ID" />
+    <property name="TransakciaZruseneId" column="TRANSAKCIA_ZRUSENE_ID" />
+    <property name="Changed" column="CHANGED" />
+
+  </class>
+
+  <sql-query name="FyzickaOsobaStatnaPrislusnostGet">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsobaStatnaPrislusnost"></return>
+    exec FO.FYZICKA_OSOBA_STATNA_PRISLUSNOST_GET :ID
+  </sql-query>
+  <sql-query name="FyzickaOsobaStatnaPrislusnostCreate">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsobaStatnaPrislusnost"></return>
+    exec FO.FYZICKA_OSOBA_STATNA_PRISLUSNOST_INS :ID, :FyzickaOsobaId, :RfoStatIk, :TransakciaId, :TransakciaZruseneId, :Changed
+  </sql-query>
+  <sql-query name="FyzickaOsobaStatnaPrislusnostDelete">
+    exec FO.FYZICKA_OSOBA_STATNA_PRISLUSNOST_DEL :ID, :TransakciaZruseneId
+  </sql-query>
+  <sql-query name="FyzickaOsobaStatnaPrislusnostList">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsobaStatnaPrislusnost"></return>
+    exec FO.FYZICKA_OSOBA_STATNA_PRISLUSNOST_LIST :FyzickaOsobaId, :RfoStatIk
+  </sql-query>
+  <sql-query name="FyzickaOsobaStatnaPrislusnostBrowsePg">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsobaStatnaPrislusnost"></return>
+    exec FO.FYZICKA_OSOBA_STATNA_PRISLUSNOST_LISTPG :FyzickaOsobaId, :RfoStatIk, :CurrentPage, :RecordsPerPage
+  </sql-query>
+  <sql-query name="FyzickaOsobaStatnaPrislusnostUpdate">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsobaStatnaPrislusnost"></return>
+    exec FO.FYZICKA_OSOBA_STATNA_PRISLUSNOST_UPD :ID, :FyzickaOsobaId, :RfoStatIk, :TransakciaId, :TRANSAKCIA_ID_OLD
+  </sql-query>
+  <sql-query name="FyzickaOsobaStatnaPrislusnostBrowseCnt">
+    exec FO.FYZICKA_OSOBA_STATNA_PRISLUSNOST_LISTCNT :FyzickaOsobaId, :RfoStatIk
+  </sql-query>
+
+  <sql-query name="FyzickaOsobaStatnaPrislusnostFOGet">
+    <return class="Ditec.RIS.RFO.Dol.FyzickaOsobaStatnaPrislusnost"></return>
+    exec FO.FYZICKA_OSOBA_STATNA_PRISLUSNOST_FO_GET  :FYZICKA_OSOBA_ID
+  </sql-query>
+
+
+</hibernate-mapping>
